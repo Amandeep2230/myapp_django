@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>Detail</title>
+    <title>Details</title>
 </head>
 <body>
+<h1> Topic: {{ top_obj }} </h1> <br>
+<h2> Category: {{ top_obj.category }} </h2>
+<h2> Courses: </h2>
+{% for course in course_list %}
+    <p> {{ course }} </p>
+{% endfor %}
 
-
-
-
+<p><a href="/myapp">Main page (Hardcoded)</a></p> <!-- hardcoded -->
+<p><a href="{% url 'myapp:index' %}">Main page (URL Namespacing)</a></p> <!-- url namespacing -->
 
 </body>
 </html>
