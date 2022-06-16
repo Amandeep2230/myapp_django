@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+</head>
+<body>
+<h1> Topic: {{ top_obj }} </h1> <br>
+<h2> Category: {{ top_obj.category }} </h2>
+<h2> Courses: </h2>
+{% for course in course_list %}
+    <p> {{ course }} </p>
+{% endfor %}
+
+<p><a href="{% url 'myapp:index' %}">Main page</a></p> <!-- url  namespacing -->
+
+</body>
+</html>
