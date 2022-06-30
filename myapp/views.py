@@ -44,3 +44,7 @@ def detail(request, top_no):
                                                   'course_list': course_list})
 
 #updated till lab 6
+
+def courses(request):
+    courlist = Course.objects.all().order_by('id')
+    return render(request, 'myapp/courses.html', {'courlist': courlist})
