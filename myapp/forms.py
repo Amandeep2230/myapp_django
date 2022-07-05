@@ -1,5 +1,6 @@
 from django import forms
-from myapp.models import Order
+from django.core.validators import MinValueValidator
+from .models import Order
 
 
 class InterestForm(forms.Form):
@@ -8,8 +9,5 @@ class InterestForm(forms.Form):
         ("No", 0)
     ]
     interested = forms.ChoiceField(widgets=forms.RadioSelect, choices=CHOICES)
-    levels = forms.IntegerField(widget=forms.NumberInput, initial=1)
-    comments = forms.CharField(widget=forms.Textarea, label='Additional Comments')
-
-
-
+    levels = forms.IntegerField(widget=forms.NumberInput, initial=1, validators=[MinValueValidator(1)])
+    comments = forms.CharField(widget=forms.Textarea, label='Additional Comments', blank=True)
