@@ -27,7 +27,7 @@ class Course(models.Model):
 
     def discount(self):
         disc_price = self.price - (self.price*0.1)
-        return "{0}".format(disc_price)
+        return disc_price
 
 
 class Student(User):
@@ -48,6 +48,7 @@ class Order(models.Model):
     ORDER_STATUS = [(0, 'Cancelled'),
                     (1, 'Order Confirmed')]
     course = models.ForeignKey(Course, related_name="course", on_delete=models.CASCADE)
+    levels = models.PositiveIntegerField(default=1)
     student = models.ForeignKey(Student, related_name="student", on_delete=models.CASCADE)
     order_status = models.IntegerField(choices=ORDER_STATUS, default=0)
     order_date = models.DateField()

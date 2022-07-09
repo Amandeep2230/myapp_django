@@ -1,15 +1,27 @@
 from django import forms
-from myapp.models import Order
+from .models import Order
+from django.core.validators import MinValueValidator
 
 
 class InterestForm(forms.Form):
     CHOICES = [
-        ("Yes", 1),
-        ("No", 0)
+        (1, "Yes"),
+        (0, "No")
     ]
-    interested = forms.ChoiceField(widgets=forms.RadioSelect, choices=CHOICES)
-    levels = forms.IntegerField(widget=forms.NumberInput, initial=1)
-    comments = forms.CharField(widget=forms.Textarea, label='Additional Comments')
+    interested = forms.ChoiceField(widget=forms.RadioSelect, choices=CHOICES)
+    levels = forms.IntegerField(widget=forms.NumberInput, initial=1, validators=[MinValueValidator(1)])
+    comments = forms.CharField(widget=forms.Textarea, label='Additional Comments', required=False)
 
 
+# Lab 8 - Order Model Form
+class OrderForm(forms.ModelForm):
+    levels = forms.IntegerField(widget=forms.NumberInput, initial=1, validators=[MinValueValidator(1)])
 
+    class Meta:
+        model = Order
+        fields = ['student', 'course', 'levels', 'order_date']
+        # Set widgets
+        widgets = {
+            'student': forms.RadioSelect(),
+            'order_date': forms.SelectDateWidget(),
+        }
