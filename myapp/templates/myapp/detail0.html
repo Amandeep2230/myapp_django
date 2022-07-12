@@ -12,7 +12,8 @@
     <p> {{ course }} </p>
 {% endfor %}
 
-<p><a href="{% url 'myapp:index' %}">Main page</a></p> <!-- url  namespacing -->
+<p><a href="/myapp">Main page (Hardcoded)</a></p> <!-- hardcoded -->
+<p><a href="{% url 'myapp:index' %}">Main page (URL Namespacing)</a></p> <!-- url namespacing -->
 
 </body>
 </html>
