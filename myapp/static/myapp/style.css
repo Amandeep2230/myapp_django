@@ -1,0 +1,45 @@
+
+body{
+    background-color: #A7A6A6FF;
+    font-size: 20px;
+}
+
+h1{
+    background-color: beige;
+    font-size: 40px;
+    color: black;
+    font-style: normal;
+    position: relative;
+}
+
+.placeContainer{ /* page container for placeorder and coursedetail page */
+    display: flex;
+    justify-content: space-between;
+}
+
+.courseContainer{ /* container for course and price list on place order page */
+    display: flex;
+    justify-content: space-between;
+}
+
+.priceDiv{      /* container for price list on place order page */
+    padding-left: 5em;
+}
+
+.formContainer{ /* container for place order form */
+    padding-right: 5em;
+}
+
+.interestFormContainer{     /* container for interest form */
+    padding-right: 5em;
+}
+
+.submitButton{  /* container for submit button */
+    text-align: center;
+    padding: 1em;
+}
+
+.hbar1 {
+display: inline;
+margin: 15px;
+}

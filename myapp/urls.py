@@ -9,11 +9,7 @@ urlpatterns = [
     path(r'', views.index, name='index'),
     path(r'about/', views.about, name='about'),
     path(r'<int:top_no>/', views.detail, name='detail'),
-<<<<<<< HEAD
     path(r'courses/', views.courses, name='courses'),
     path(r'courses/<int:cour_id>/', views.coursedetail, name='coursedetail'),
     path(r'place_order/', views.place_order, name='place_order'),
 ]
-=======
-]
->>>>>>> f42d2cf72a5dc45cf03e1af5ed19c50606c4aff3
