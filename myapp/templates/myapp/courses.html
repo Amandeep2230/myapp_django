@@ -2,6 +2,8 @@
 
 <!-- page to display list of courses -->
 
+<h1>{% block myhdg %}Hello {{ user }}{% endblock %}</h1>
+
 {% block body_block %}
     <h2> List of available courses: </h2>
     {% for available_course in courlist %}

@@ -1,7 +1,9 @@
 {% extends 'myapp/base.html' %}
 
+<h1>{% block myhdg %}Hello {{ user }}{% endblock %}</h1>
+
 {% block body_block %}
-<h1> Topic: {{ top_obj }} </h1> <br>
+<h1> Topic: {{ top_obj.name }} </h1> <br>
 <h2> Category: {{ top_obj.category }} </h2>
 <h2> Courses: </h2>
 {% for course in course_list %}

@@ -1,14 +1,28 @@
 {% extends 'myapp/base.html' %}
 
+<h1>{% block myhdg %}Hello {{ user }}{% endblock %}</h1>
 {% block body_block %}
-{% if top_list %}
-    <h2>List of Topics</h2>
-    <ol>
-        {% for top in top_list %}
-        <li> <a href="{% url 'myapp:detail' top.id %}"> {{ top.name}} </a> </li>
-    {% endfor %}
-    </ol>
-{% else %}
-    <strong>There are no available topics!</strong>
-{% endif %}
+    {% if top_list %}
+        <h2>List of Topics</h2>
+        <ol>
+            {% for top in top_list %}
+                <li> <a href="{% url 'myapp:detail' top.id %}"> {{ top.name}} </a> </li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        <strong>There are no available topics!</strong>
+    {% endif %}
+
+    <p><em>Last Login: {{ msg }}</em></p>
+
+{% endblock %}
+
+{% block login %}
+
+    {% if islogged %}
+        <a href="{% url 'myapp:logout' %}">Logout</a>
+    {% else %}
+       <a href="{% url 'myapp:login' %}">Login</a>
+    {% endif %}
+
 {% endblock %}

@@ -1,8 +1,13 @@
 {% extends 'myapp/base.html' %}
 
+<h1>{% block myhdg %}Hello {{ user }}{% endblock %}</h1>
 {% block body_block %}
 
-    <h2 fontWeight="bold">This is an E-learning Website! Search our Topics to find all available '
-                   'Courses.</h2>
+    <h2 fontWeight="bold">This is an E-learning Website! Search our Topics to find all available
+                   courses.</h2>
+
+    <br>
+
+    <p><em>Number of visits: {{ num_visits }}</em></p>
 
 {% endblock %}

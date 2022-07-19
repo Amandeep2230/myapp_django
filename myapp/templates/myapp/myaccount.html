@@ -1,0 +1,27 @@
+{% extends 'myapp/base.html' %}
+
+<!-- page to display list of courses -->
+
+{% block myhdg %}   {% endblock %}
+{% block body_block %}
+
+    <!-- full name -->
+    <h1>{{ student.first_name }} {{ student.last_name }}</h1>
+
+    <!-- List of courses ordered -->
+    <h3>Courses ordered:</h3>
+    {% for order in orders  %}
+        <p>{{order.course}}</p>
+    {% endfor %}
+
+    <br>
+
+    <!-- List of topics interested in -->
+    <h3>Interested in:</h3>
+    {% for topic in topics  %}
+        <p>{{ topic }}</p>
+    {% endfor %}
+
+{% endblock %}
+
+

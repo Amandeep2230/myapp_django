@@ -39,7 +39,11 @@ h1{
     padding: 1em;
 }
 
+.links{
+    display: inline-block;
+}
 .hbar1 {
-display: inline;
-margin: 15px;
+    display: inline-block;
+    margin: 15px;
+    width:auto;
 }

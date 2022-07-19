@@ -4,6 +4,12 @@ from django.core.validators import MinValueValidator
 from django.core.validators import MinValueValidator
 from .models import Order
 
+'''
+# Lab 9 - Login form
+class LoginForm(forms.Form):
+    username = forms.CharField(widget=forms.TextInput, label='Username')
+    password = forms.CharField(widget=forms.PasswordInput, label='Password')
+'''
 
 class InterestForm(forms.Form):
     CHOICES = [
