@@ -46,6 +46,9 @@ class Student(User):
     city = models.CharField(max_length=2, choices=CITY_CHOICES, default='WS')
     interested_in = models.ManyToManyField(Topic)
 
+    # final project q10 (requires to "pip install Pillow" into the project folder to execute correctly)
+    image = models.ImageField(upload_to='uploads/%Y/%m/%d/', null=True, blank=True)
+
     def __str__(self):
         return "{0} {1}".format(self.first_name, self.last_name)
 
